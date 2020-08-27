@@ -1,9 +1,13 @@
 using System;
 using System.Diagnostics;
-using static Vitals.BreachFlag;
+using static Vitals.VitalBreachLogger;
 
 namespace Vitals
 {
+    /// <summary>
+    /// This class checks the beats per minute levels
+    /// and triggers logger in case it is out of limits
+    /// </summary>
     class BPMChecker
     {
         public static bool Check_BPM(float bpm)

@@ -1,5 +1,5 @@
 pushd "%~dp0"
 
-Test.exe
+checker.exe
 
 popd

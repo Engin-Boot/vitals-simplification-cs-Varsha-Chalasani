@@ -6,7 +6,7 @@
 	<Compile Include="Vitals/BPMChecker.cs"/>
 	<Compile Include="Vitals/SpO2Checker.cs"/>
 	<Compile Include="Vitals/RespRateChecker.cs"/>
-	<Compile Include="Vitals/BreachFlag.cs"/>
+	<Compile Include="Vitals/VitalBreachLogger.cs"/>
   </ItemGroup>
   <Target Name="Build">
     <Csc Sources="@(Compile)"/>  

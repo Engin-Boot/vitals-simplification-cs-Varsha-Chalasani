@@ -5,6 +5,9 @@ using static Vitals.BugLogger;
 
 namespace Vitals
 {
+    /// <summary>
+    /// This class tests the logic with varied test cases
+    /// </summary>
     public class Test
     {
         static int Main()

@@ -6,6 +6,9 @@ using static Vitals.SpO2Checker;
 
 namespace Vitals
 {
+    /// <summary>
+    /// This class checks if all vitals are in limits or not
+    /// </summary>
     public class VitalsChecker
     {
         public static bool CheckVitals(float bpm, float spo2, float respRate)
