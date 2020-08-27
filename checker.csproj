@@ -1,7 +1,11 @@
 <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Compile Include="Vitals/Debugger.cs"/>
+	<Compile Include="Vitals/Test.cs"/>
+    <Compile Include="Vitals/BugLogger.cs"/>
 	<Compile Include="Vitals/VitalsChecker.cs"/>
+	<Compile Include="Vitals/BPMChecker.cs"/>
+	<Compile Include="Vitals/SpO2Checker.cs"/>
+	<Compile Include="Vitals/RespRateChecker.cs"/>
 	<Compile Include="Vitals/BreachFlag.cs"/>
   </ItemGroup>
   <Target Name="Build">
