@@ -15,11 +15,13 @@ namespace Vitals
             if (respRate < 30)
             {
                 BreachLogger("Respiration rate", "low", respRate);
+                Console.WriteLine("\n"); //Line break for each test case
                 return false;
             }
             else if (respRate > 95)
             {
                 BreachLogger("Respiration rate", "high", respRate);
+                Console.WriteLine("\n"); //Line break for each test case
                 return false;
             }
             Console.WriteLine("\n"); //Line break for each test case
