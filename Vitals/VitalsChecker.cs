@@ -1,8 +1,6 @@
 using System;
 using System.Diagnostics;
-using static Vitals.RespRateChecker;
-using static Vitals.BPMChecker;
-using static Vitals.SpO2Checker;
+using static Vitals.VitalValueTester;
 
 namespace Vitals
 {
@@ -13,9 +11,10 @@ namespace Vitals
     {
         public static bool CheckVitals(float bpm, float spo2, float respRate)
         {
-            bool vital1 = Check_BPM(bpm);
-            bool vital2 = Check_SPO2(spo2);
-            bool vital3 = Check_respRate(respRate);
+            bool vital1 = CheckValueAgainstRange("BPM", bpm, 70, 150);
+            bool vital2 = CheckValueAgainstRange("SpO2", spo2, 90, null);
+            bool vital3 = CheckValueAgainstRange("Respiration rate", respRate, 30, 95);
+            Console.WriteLine("\n"); //To seperate output streams
             bool vitalCheck = vital1 && vital2 && vital3;
             
             return vitalCheck; 
