@@ -16,15 +16,24 @@ namespace Vitals
                 BreachLogger(vital, "low", value);
                 return false;
             }
-            else if (highest!=null)
+            else if (upperLimitTrigger(value, highest))
             {
-                if(value > highest)
-                {
-                    BreachLogger(vital, "high", value);
-                    return false;
-                } 
+                BreachLogger(vital, "high", value);
+                return false;
             }
             return true;
+        }
+        
+        static bool upperLimitTrigger(float value, int? highest)
+        {
+            if (highest != null)
+            {
+               if(value > highest)
+                {
+                    return true;
+                }
+            }
+            return false;
         }
     }
 }
