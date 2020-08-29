@@ -1,6 +1,6 @@
 using System;
 using System.Diagnostics;
-using static Vitals.VitalBreachLogger;
+using static Vitals.VitalStatusLogger;
 namespace Vitals
 {
     /// <summary>
@@ -13,12 +13,12 @@ namespace Vitals
         {
             if (value < least)
             {
-                BreachLogger(vital, "low", value);
+                LogBreach(vital, "low", value);
                 return false;
             }
             else if (upperLimitTrigger(value, highest))
             {
-                BreachLogger(vital, "high", value);
+                LogBreach(vital, "high", value);
                 return false;
             }
             return true;

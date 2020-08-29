@@ -28,7 +28,6 @@ namespace Vitals
             //All vitals out of limits
             ExpectFalse(CheckVitals(170, 60, 100));
 
-            Console.WriteLine("All ok");
             return 0;
         }
     }
