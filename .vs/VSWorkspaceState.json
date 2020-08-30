@@ -1,4 +1,8 @@
 {
-  "ExpandedNodes": [],
+  "ExpandedNodes": [
+    "",
+    "\\Vitals"
+  ],
+  "SelectedNode": "\\checker.csproj",
   "PreviewInSolutionExplorer": false
 }

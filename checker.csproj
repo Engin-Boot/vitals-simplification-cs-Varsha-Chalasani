@@ -2,7 +2,7 @@
   <ItemGroup>
 	<Compile Include="Vitals/Test.cs"/>
     <Compile Include="Vitals/BugLogger.cs"/>
-	<Compile Include="Vitals/VitalsChecker.cs"/>
+	<Compile Include="Vitals/IReporter.cs"/>
 	<Compile Include="Vitals/VitalValueTester.cs"/>
 	<Compile Include="Vitals/VitalStatusLogger.cs"/>
   </ItemGroup>

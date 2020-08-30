@@ -6,12 +6,16 @@ using static Vitals.VitalStatusLogger;
 namespace Vitals
 {
     /// <summary>
-    /// This class checks if all vitals are in limits or not
+    /// This interface reports vital checks
     /// </summary>
-    public class VitalsChecker
+    interface IReporter
+    {
+        bool CheckVitals(float bpm, float spo2, float respRate);
+    }
+    public class VitalsChecker : IReporter
     {
         static int testCount = 0;
-        public static bool CheckVitals(float bpm, float spo2, float respRate)
+        public bool CheckVitals(float bpm, float spo2, float respRate)
         {
             testCount++;
             Console.WriteLine("Test case : {0}", testCount);
