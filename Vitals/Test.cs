@@ -1,6 +1,7 @@
 using System;
 using System.Diagnostics;
-using static Vitals.VitalsChecker;
+using static Vitals.IStatusLogger;
+using static Vitals.IReporter;
 using static Vitals.BugLogger;
 using static Vitals.VitalValueTester;
 

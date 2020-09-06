@@ -25,6 +25,10 @@ namespace Vitals
         {
 
         }
+        public void LogVitalsOk(bool vitalCheck)
+        {
+            this.logger.LogVitalsOk(vitalCheck);
+        }
         public bool CheckVitals(float bpm, float spo2, float respRate)
         {
             testCount++;
@@ -36,7 +40,7 @@ namespace Vitals
             bool vital2 = valueTester.CheckValueAgainstRange("SpO2", spo2, 90, null);
             bool vital3 = valueTester.CheckValueAgainstRange("Respiration rate", respRate, 30, 95);
             bool vitalCheck = vital1 && vital2 && vital3;
-            logger.LogVitalsOk(vitalCheck);
+            this.LogVitalsOk(vitalCheck);
             Console.WriteLine("\n"); //To seperate output streams
 
             return vitalCheck; 
