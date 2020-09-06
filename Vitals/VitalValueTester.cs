@@ -16,7 +16,7 @@ namespace Vitals
         }
         public VitalValueTester()
         {
-         
+            this.logger = null;
         }
         public void LogBreach(string vital, string level, float value)
         {

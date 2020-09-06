@@ -23,7 +23,7 @@ namespace Vitals
         }
         public VitalsChecker()
         {
-
+            this.logger = null;
         }
         public void LogVitalsOk(bool vitalCheck)
         {
