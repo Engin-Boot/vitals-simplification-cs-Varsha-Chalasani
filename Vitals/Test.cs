@@ -2,6 +2,7 @@ using System;
 using System.Diagnostics;
 using static Vitals.VitalsChecker;
 using static Vitals.BugLogger;
+using static Vitals.VitalValueTester;
 
 namespace Vitals
 {
@@ -23,6 +24,10 @@ namespace Vitals
         {
             IReporter reporter = new VitalsChecker();
             Test _test = new Test(reporter);
+
+            IStatusLogger logger = new ConsoleLogger();
+            VitalValueTester valueTester = new VitalValueTester(logger);
+            VitalsChecker checker = new VitalsChecker(logger);
             // All within limits
             ExpectTrue(_test.Report(100, 95, 60));
 

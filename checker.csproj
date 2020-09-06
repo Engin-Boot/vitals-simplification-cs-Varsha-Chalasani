@@ -4,7 +4,7 @@
     <Compile Include="Vitals/BugLogger.cs"/>
 	<Compile Include="Vitals/IReporter.cs"/>
 	<Compile Include="Vitals/VitalValueTester.cs"/>
-	<Compile Include="Vitals/VitalStatusLogger.cs"/>
+	<Compile Include="Vitals/IStatusLogger.cs"/>
   </ItemGroup>
   <Target Name="Build">
     <Csc Sources="@(Compile)"/>  

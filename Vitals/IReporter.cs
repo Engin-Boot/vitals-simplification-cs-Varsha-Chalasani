@@ -1,7 +1,8 @@
 using System;
 using System.Diagnostics;
 using static Vitals.VitalValueTester;
-using static Vitals.VitalStatusLogger;
+using static Vitals.IStatusLogger;
+
 
 namespace Vitals
 {
@@ -14,17 +15,28 @@ namespace Vitals
     }
     public class VitalsChecker : IReporter
     {
-        static int testCount = 0;
+        private static int testCount = 0;
+        public IStatusLogger logger;
+        public VitalsChecker(IStatusLogger target)
+        {
+            this.logger = target;
+        }
+        public VitalsChecker()
+        {
+
+        }
         public bool CheckVitals(float bpm, float spo2, float respRate)
         {
             testCount++;
             Console.WriteLine("Test case : {0}", testCount);
-            
-            bool vital1 = CheckValueAgainstRange("BPM", bpm, 70, 150);
-            bool vital2 = CheckValueAgainstRange("SpO2", spo2, 90, null);
-            bool vital3 = CheckValueAgainstRange("Respiration rate", respRate, 30, 95);
+
+            VitalValueTester valueTester = new VitalValueTester();
+
+            bool vital1 = valueTester.CheckValueAgainstRange("BPM", bpm, 70, 150);
+            bool vital2 = valueTester.CheckValueAgainstRange("SpO2", spo2, 90, null);
+            bool vital3 = valueTester.CheckValueAgainstRange("Respiration rate", respRate, 30, 95);
             bool vitalCheck = vital1 && vital2 && vital3;
-            LogVitalsOk(vitalCheck);
+            logger.LogVitalsOk(vitalCheck);
             Console.WriteLine("\n"); //To seperate output streams
 
             return vitalCheck; 
