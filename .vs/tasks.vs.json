@@ -1,0 +1,10 @@
+{
+  "version": "0.2.1",
+  "tasks": [
+    {
+      "taskLabel": "task-vitals-simplification-cs-Varsha-Chalasani",
+      "appliesTo": "/",
+      "type": "launch"
+    }
+  ]
+}
