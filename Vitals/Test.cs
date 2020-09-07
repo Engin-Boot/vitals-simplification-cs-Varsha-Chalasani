@@ -14,11 +14,11 @@ namespace Vitals
     {
         static int Main()
         {
-            IReporter reporter = new VitalsChecker();
 
             IStatusLogger logger = new ConsoleLogger();
             VitalValueTester valueTester = new VitalValueTester(logger);
             VitalsChecker checker = new VitalsChecker(logger);
+            IReporter reporter = new VitalsChecker(logger);
             // All within limits
             ExpectTrue(reporter.CheckVitals(100, 95, 60));
 

@@ -16,18 +16,18 @@ namespace Vitals
     public class VitalsChecker : IReporter
     {
         private static int testCount = 0;
-        public IStatusLogger logger;
+        public IStatusLogger allOkLogger;
         public VitalsChecker(IStatusLogger target)
         {
-            this.logger = target;
+            this.allOkLogger = target;
         }
         public VitalsChecker()
         {
-            this.logger = null;
+            this.allOkLogger = null;
         }
         public void LogVitalsOk(bool vitalCheck)
         {
-            this.logger.LogVitalsOk(vitalCheck);
+            this.allOkLogger.LogVitalsOk(vitalCheck);
         }
         public bool CheckVitals(float bpm, float spo2, float respRate)
         {
@@ -44,6 +44,6 @@ namespace Vitals
             Console.WriteLine("\n"); //To seperate output streams
 
             return vitalCheck; 
-        }  
+        }
     }
 }
