@@ -21,10 +21,6 @@ namespace Vitals
         {
             this.allOkLogger = target;
         }
-        public VitalsChecker()
-        {
-            this.allOkLogger = null;
-        }
         public void LogVitalsOk(bool vitalCheck)
         {
             this.allOkLogger.LogVitalsOk(vitalCheck);
@@ -34,7 +30,7 @@ namespace Vitals
             testCount++;
             Console.WriteLine("Test case : {0}", testCount);
 
-            VitalValueTester valueTester = new VitalValueTester();
+            VitalValueTester valueTester = new VitalValueTester(this.allOkLogger);
 
             bool vital1 = valueTester.CheckValueAgainstRange("BPM", bpm, 70, 150);
             bool vital2 = valueTester.CheckValueAgainstRange("SpO2", spo2, 90, null);
